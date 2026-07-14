@@ -717,7 +717,7 @@ def main():
 
     if not args.text and not args.input:
         fatal("必须提供 --text 或 --input")
-    text = args.text or open(args.input, encoding="utf-8").read()
+    text = args.text or open(args.input, encoding="utf-8-sig").read()
 
     wd = os.path.abspath(args.workdir)
     os.makedirs(wd, exist_ok=True)
@@ -825,4 +825,10 @@ def main():
 
 
 if __name__ == "__main__":
+    # Windows 下默认 GBK 控制台遇到 Unicode(尤其是 BOM \ufeff) 会崩溃
+    # 强制 stdout/stderr 用 UTF-8 输出
+    if sys.stdout and hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if sys.stderr and hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     main()
