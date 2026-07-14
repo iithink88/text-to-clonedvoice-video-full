@@ -1,0 +1,9 @@
+{
+  "minimax": {
+    "group_id": "",
+    "voice_id": "在这里填你克隆好的 voice_id（见 新手安装指导.md 第4步）",
+    "token_plan_api_key": "如果用 Token Plan 订阅套餐就填这个，否则留空",
+    "balance_api_key": "如果用按量计费/余额就填这个（新手推荐），否则留空",
+    "preferred_model": "speech-2.8-turbo"
+  }
+}
