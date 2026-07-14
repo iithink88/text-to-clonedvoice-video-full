@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文案秒变短视频 · 朋友三步上手指南</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --card:#ffffff; --ink:#1f2733; --sub:#5b6675;
+    --blue:#2f6df6; --blue-soft:#e8f0ff; --orange:#ff7a1a; --orange-soft:#fff1e6;
+    --green:#1fb86b; --green-soft:#e7faf0; --line:#e6ebf2; --shadow:0 8px 24px rgba(31,39,51,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,Roboto,sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;padding:32px 16px 64px}
+  .wrap{max-width:820px;margin:0 auto}
+  header.hero{background:linear-gradient(135deg,#2f6df6,#5b8dff);color:#fff;border-radius:20px;
+    padding:38px 34px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  header.hero h1{font-size:28px;letter-spacing:.5px;margin-bottom:10px}
+  header.hero p{font-size:15px;opacity:.95;max-width:560px}
+  header.hero .badge{display:inline-block;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+    padding:4px 12px;border-radius:999px;font-size:12px;margin-top:16px}
+  .hero-art{position:absolute;right:-10px;bottom:-10px;opacity:.25}
+  section{background:var(--card);border:1px solid var(--line);border-radius:18px;
+    padding:26px 28px;margin-top:22px;box-shadow:var(--shadow)}
+  h2{font-size:20px;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+  .tag{font-size:12px;font-weight:700;color:#fff;background:var(--blue);border-radius:8px;padding:3px 10px}
+  .lead{color:var(--sub);font-size:14px;margin-bottom:18px}
+  .prep{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .prep .item{background:var(--blue-soft);border-radius:12px;padding:14px 16px;font-size:14px}
+  .prep .item b{color:var(--blue)}
+  .step{display:flex;gap:18px;align-items:flex-start;padding:18px 0;border-bottom:1px dashed var(--line)}
+  .step:last-child{border-bottom:none}
+  .num{flex:0 0 44px;height:44px;border-radius:50%;background:var(--orange);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;box-shadow:0 4px 12px rgba(255,122,26,.35)}
+  .step .body{flex:1}
+  .step h3{font-size:16px;margin-bottom:6px}
+  .step p{font-size:14px;color:var(--sub)}
+  .step code{background:#0f1729;color:#7ee787;padding:2px 8px;border-radius:6px;font-size:13px;font-family:Consolas,Menlo,monospace}
+  .mock{margin-top:12px;background:#0f1729;border-radius:12px;padding:14px 16px;overflow:hidden}
+  .mock svg{display:block;width:100%;height:auto}
+  .pill{display:inline-block;background:var(--green-soft);color:var(--green);border-radius:999px;
+    padding:3px 11px;font-size:12px;font-weight:700;margin-right:6px}
+  .pill.alt{background:var(--orange-soft);color:var(--orange)}
+  .video-box{margin-top:14px;border-radius:14px;overflow:hidden;background:#0b0f1a;box-shadow:inset 0 0 0 1px #1c2433}
+  video{width:100%;display:block}
+  .cap{font-size:12px;color:var(--sub);text-align:center;padding:8px}
+  .faq dt{font-weight:700;font-size:14px;margin-top:12px}
+  .faq dd{font-size:14px;color:var(--sub);margin-bottom:4px}
+  .note{background:var(--orange-soft);border-left:4px solid var(--orange);border-radius:10px;
+    padding:12px 16px;font-size:13px;color:#7a3b08;margin-top:14px}
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:28px}
+  a{color:var(--blue)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <h1>🎬 文案秒变短视频</h1>
+    <p>你只要写一段"口播文案"（就像发朋友圈的长文字），剩下的<strong>配音、字幕、画面、剪辑</strong>这个工具全帮你搞定，最后吐出一条 mp4 短视频。本指南专为"不想看说明书"的朋友设计，照着做 3 步就能出片。</p>
+    <span class="badge">朋友分享版 · 免费声零配置 / 克隆声约 10 元</span>
+    <svg class="hero-art" width="180" height="140" viewBox="0 0 180 140">
+      <rect x="20" y="30" width="140" height="90" rx="10" fill="#fff" opacity=".9"/>
+      <circle cx="90" cy="75" r="22" fill="#2f6df6"/>
+      <path d="M83 66 L83 84 L99 75 Z" fill="#fff"/>
+      <rect x="40" y="20" width="100" height="10" rx="5" fill="#fff" opacity=".7"/>
+    </svg>
+  </header>
+
+  <section>
+    <h2><span class="tag">准备</span> 一次性装好环境（约 15 分钟，只做一次）</h2>
+    <p class="lead">下面 4 件东西装好之后，以后每次做视频只要 3 步、点几下鼠标就行。</p>
+    <div class="prep">
+      <div class="item"><b>① Node.js</b><br>去 nodejs.org 下载 <b>LTS</b> 版，一路"下一步"安装</div>
+      <div class="item"><b>② ffmpeg</b><br>按 SKILL.md 里的链接下载，把 exe 放进系统 PATH</div>
+      <div class="item"><b>③ Python 依赖</b><br>命令行进本文件夹，跑 <code style="background:#e8f0ff;color:#2f6df6">pip install -r requirements.txt</code></div>
+      <div class="item"><b>④ Vosk 模型</b><br>下载中文模型小包，解压到 <code style="background:#e8f0ff;color:#2f6df6">models/vosk-model-small-cn-0.22</code></div>
+    </div>
+    <div class="note">💡 不确定装没装好？双击 <b>启动.bat</b>，它会告诉你差哪一步。详情都在同包的 <b>SKILL.md</b> 里。</div>
+  </section>
+
+  <section>
+    <h2><span class="tag">3 步</span> 照着做，出片！</h2>
+    <p class="lead">环境装好后，每次做视频就是下面这 3 步。</p>
+
+    <div class="step">
+      <div class="num">1</div>
+      <div class="body">
+        <h3>写文案</h3>
+        <p>打开 <b>input/文案.txt</b>，把你的口播词写进去。想让某句话变橙色重点，用 <code>**关键词**</code> 包起来就行。不会写也行 —— 双击启动时可以直接粘贴。</p>
+        <div class="mock">
+          <svg viewBox="0 0 680 120">
+            <rect x="0" y="0" width="680" height="120" fill="#0f1729"/>
+            <rect x="20" y="16" width="640" height="88" rx="8" fill="#1b2433"/>
+            <rect x="36" y="32" width="320" height="10" rx="5" fill="#3b4a63"/>
+            <rect x="36" y="52" width="560" height="10" rx="5" fill="#2f6df6"/>
+            <rect x="36" y="72" width="420" height="10" rx="5" fill="#3b4a63"/>
+            <text x="36" y="106" fill="#7ee787" font-family="monospace" font-size="11">文案.txt · 已保存</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <div class="body">
+        <h3>双击启动</h3>
+        <p>直接双击本文件夹里的 <b>启动.bat</b>。会弹出一个蓝色窗口问你选声音引擎，照着提示按键盘数字键就行。</p>
+        <div class="mock">
+          <svg viewBox="0 0 680 150">
+            <rect x="0" y="0" width="680" height="150" fill="#0f1729"/>
+            <text x="20" y="28" fill="#7ee787" font-family="monospace" font-size="13">请选择声音引擎：</text>
+            <rect x="20" y="42" width="640" height="26" rx="6" fill="#13233f"/>
+            <text x="34" y="60" fill="#fff" font-family="monospace" font-size="13">[B] edge-tts 免费声（推荐先试，零配置）</text>
+            <rect x="20" y="76" width="640" height="26" rx="6" fill="#0f1729"/>
+            <text x="34" y="94" fill="#9fb0c8" font-family="monospace" font-size="13">[A] MiniMax 克隆声（约 10 元，永久可用）</text>
+            <text x="20" y="128" fill="#ffd479" font-family="monospace" font-size="12">› 输入字母后回车 _</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <div class="body">
+        <h3>选好参数，等出片</h3>
+        <p>接着选<b>加速倍数</b>（默认 1.3，让语速更利落）、填个<b>标题</b>，回车。工具会自动生成配音 → 对齐字幕 → 渲染画面，几分钟後成片出现在你的<b>桌面</b>。</p>
+        <div class="mock">
+          <svg viewBox="0 0 680 110">
+            <rect x="0" y="0" width="680" height="110" fill="#0f1729"/>
+            <rect x="20" y="18" width="300" height="12" rx="6" fill="#3b4a63"/>
+            <rect x="20" y="42" width="640" height="8" rx="4" fill="#1b2433"/>
+            <rect x="20" y="56" width="480" height="8" rx="4" fill="#1b2433"/>
+            <rect x="20" y="70" width="560" height="8" rx="4" fill="#1b2433"/>
+            <rect x="500" y="84" width="160" height="18" rx="9" fill="#1fb86b"/>
+            <text x="520" y="98" fill="#fff" font-family="monospace" font-size="11">✓ 渲染完成</text>
+          </svg>
+        </div>
+        <p style="margin-top:10px">
+          <span class="pill">B 免费声</span> 微软自带音色，立即可用，适合快速出片<br>
+          <span class="pill alt">A 克隆声</span> 先用 MiniMax 网页克隆你自己的声音（约 10 元），之后每次免费生成
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="tag">演示</span> 这就是用它做出来的样片</h2>
+    <p class="lead">下面这条视频就是用本工具、选"免费声"一键生成的（配音 + 字幕 + 分镜画面全自动）。</p>
+    <div class="video-box">
+      <video controls preload="metadata" src="demo.mp4"></video>
+      <div class="cap">demo.mp4 · 示例成品（约 12 秒）</div>
+    </div>
+    <div class="note">📌 看到过一个<strong>黑屏的 index.html</strong>？那是给录屏软件用的中间草稿，不是成品，直接忽略即可。你要的是最后桌面上的 <b>.mp4</b>。</div>
+  </section>
+
+  <section>
+    <h2><span class="tag">问答</span> 常见问题</h2>
+    <dl class="faq">
+      <dt>Q：双击启动.bat 一闪就关了？</dt>
+      <dd>A：多半是 Python / ffmpeg 没装好。重新看"准备"那一步，或双击后马上截图发我。</dd>
+      <dt>Q：想用自己的声音（克隆）怎么弄？</dt>
+      <dd>A：选 [A]，按 SKILL.md 里的"新手安装指导"配一下 MiniMax（首次克隆约 10 元，之后免费）。</dd>
+      <dt>Q：字幕对不上朗读节奏？</dt>
+      <dd>A：不会。字幕是用本地 Vosk 从真实音频识别出来的，天然对齐，不会飘。</dd>
+      <dt>Q：Mac / Linux 能用吗？</dt>
+      <dd>A：本分享包主要适配 Windows。其它系统可参考 SKILL.md 手动跑 scripts。</dd>
+    </dl>
+  </section>
+
+  <footer>
+    朋友分享版 · 文案转短视频工具 · 详见同包 SKILL.md<br>
+    祝你玩得开心 🎉
+  </footer>
+
+</div>
+</body>
+</html>
