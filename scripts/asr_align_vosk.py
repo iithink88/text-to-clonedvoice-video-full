@@ -185,4 +185,9 @@ def main():
 
 
 if __name__ == "__main__":
+    # Windows GBK 控制台遇 Unicode 崩溃保险
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    if hasattr(sys.stderr, "reconfigure"):
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     main()
