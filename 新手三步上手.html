@@ -88,7 +88,7 @@
       <div class="num">1</div>
       <div class="body">
         <h3>写文案</h3>
-        <p>打开 <b>input/文案.txt</b>，把你的口播词写进去。想让某句话变橙色重点，用 <code>**关键词**</code> 包起来就行。不会写也行 —— 双击启动时可以直接粘贴。</p>
+        <p>打开 <b>input/文案.txt</b>，把你的口播词写进去。想让某句话变橙色重点，用 <code>**关键词**</code> 包起来就行。不会写也行 —— 文件夹里已带一份示例文案，双击 <b>示例一键出片.bat</b> 就能直接出片看效果。</p>
         <div class="mock">
           <svg viewBox="0 0 680 120">
             <rect x="0" y="0" width="680" height="120" fill="#0f1729"/>
@@ -106,16 +106,19 @@
       <div class="num">2</div>
       <div class="body">
         <h3>双击启动</h3>
-        <p>直接双击本文件夹里的 <b>启动.bat</b>。会弹出一个蓝色窗口问你选声音引擎，照着提示按键盘数字键就行。</p>
+        <p>直接双击本文件夹里的 <b>启动.bat</b>。会弹出一个<b>图形窗口</b>（不是黑框）：选声音引擎（A 克隆 / B 免费声）、挑音色、填加速倍数、可填标题，点「开始生成」即可。窗口下方有实时日志，做完弹窗告知成片位置。嫌麻烦？直接双击 <b>示例一键出片.bat</b>，一句话都不用输。</p>
         <div class="mock">
-          <svg viewBox="0 0 680 150">
-            <rect x="0" y="0" width="680" height="150" fill="#0f1729"/>
-            <text x="20" y="28" fill="#7ee787" font-family="monospace" font-size="13">请选择声音引擎：</text>
-            <rect x="20" y="42" width="640" height="26" rx="6" fill="#13233f"/>
-            <text x="34" y="60" fill="#fff" font-family="monospace" font-size="13">[B] edge-tts 免费声（推荐先试，零配置）</text>
-            <rect x="20" y="76" width="640" height="26" rx="6" fill="#0f1729"/>
-            <text x="34" y="94" fill="#9fb0c8" font-family="monospace" font-size="13">[A] MiniMax 克隆声（约 10 元，永久可用）</text>
-            <text x="20" y="128" fill="#ffd479" font-family="monospace" font-size="12">› 输入字母后回车 _</text>
+          <svg viewBox="0 0 680 180">
+            <rect x="0" y="0" width="680" height="180" rx="10" fill="#0f1729"/>
+            <rect x="0" y="0" width="680" height="34" rx="10" fill="#1b2433"/>
+            <text x="20" y="22" fill="#fff" font-family="sans-serif" font-size="14">文案转短视频 · 启动器</text>
+            <text x="20" y="62" fill="#9fb0c8" font-family="sans-serif" font-size="12">声音引擎： ◉ B 免费声(推荐)　○ A 克隆声</text>
+            <text x="20" y="86" fill="#9fb0c8" font-family="sans-serif" font-size="12">免费声音色：[晓晓 · 温柔女声 ▾]</text>
+            <text x="20" y="110" fill="#9fb0c8" font-family="sans-serif" font-size="12">加速倍数： 1.3　　标题(可选)：________</text>
+            <rect x="20" y="130" width="120" height="34" rx="8" fill="#2f6df6"/>
+            <text x="42" y="152" fill="#fff" font-family="sans-serif" font-size="13">开始生成</text>
+            <rect x="156" y="130" width="140" height="34" rx="8" fill="#33415c"/>
+            <text x="174" y="152" fill="#fff" font-family="sans-serif" font-size="13">一键示例出片</text>
           </svg>
         </div>
       </div>
@@ -125,7 +128,7 @@
       <div class="num">3</div>
       <div class="body">
         <h3>选好参数，等出片</h3>
-        <p>接着选<b>加速倍数</b>（默认 1.3，让语速更利落）、填个<b>标题</b>，回车。工具会自动生成配音 → 对齐字幕 → 渲染画面，几分钟後成片出现在你的<b>桌面</b>。</p>
+        <p>接着选<b>加速倍数</b>（默认 1.3，让语速更利落）、填个<b>标题</b>，点「开始生成」。工具会自动生成配音 → 对齐字幕 → 渲染画面，几分钟後成片出现在你的<b>桌面</b>。</p>
         <div class="mock">
           <svg viewBox="0 0 680 110">
             <rect x="0" y="0" width="680" height="110" fill="#0f1729"/>
@@ -158,8 +161,8 @@
   <section>
     <h2><span class="tag">问答</span> 常见问题</h2>
     <dl class="faq">
-      <dt>Q：双击启动.bat 一闪就关了？</dt>
-      <dd>A：多半是 Python / ffmpeg 没装好。重新看"准备"那一步，或双击后马上截图发我。</dd>
+      <dt>Q：双击启动.bat 没反应 / 一闪就关了？</dt>
+      <dd>A：两个常见原因——① 文件夹是从 zip 解压的，Windows 可能拦截脚本。右键 <b>启动.bat</b> → 属性 → 底部「解除锁定」(Unblock) 打勾 → 确定，再双击即可。② Python / ffmpeg 没装好，窗口里的日志会写清楚缺什么。仍不行就把窗口截图发我。</dd>
       <dt>Q：想用自己的声音（克隆）怎么弄？</dt>
       <dd>A：选 [A]，按 SKILL.md 里的"新手安装指导"配一下 MiniMax（首次克隆约 10 元，之后免费）。</dd>
       <dt>Q：字幕对不上朗读节奏？</dt>
