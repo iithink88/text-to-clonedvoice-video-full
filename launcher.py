@@ -114,11 +114,14 @@ class App:
 
         def worker():
             try:
+                # 确保 Windows 子进程用 UTF-8 输出（否则 GBK 遇 \ufeff/BOM 崩溃）
+                env = {**os.environ, "PYTHONIOENCODING": "utf-8:surrogateescape"}
                 proc = subprocess.Popen(cmd, cwd=str(SKILL_DIR),
                                         stdout=subprocess.PIPE,
                                         stderr=subprocess.STDOUT,
                                         text=True, encoding="utf-8",
-                                        errors="replace", bufsize=1)
+                                        errors="replace", bufsize=1,
+                                        env=env)
                 for line in proc.stdout:
                     self.root.after(0, self.log_write, line)
                 proc.wait()
